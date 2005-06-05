@@ -1,0 +1,105 @@
+-------------------------------------------------------------------------------
+1. What is SDLucid?
+-------------------------------------------------------------------------------
+
+SDLucid is a C++ wrapper library for the Simple Direct Media Layer by
+Sam Latinga. It aims to not only be a wrapper, but also to offer a
+cleaner interface than the original SDL as well as more functionality.
+
+What does SDLucid offer over SDL?
+
+* a nice interface :-)
+* fast graphics primitives (polygons, circles...) with arbitrary fill modes
+* affine transformations on surfaces (i.e. stretching, rotation...)
+* bitmap fonts
+* mp3, mod, wav playing with arbitrary mixing and samplerate conversion.
+
+When designing SDLucid, I tried to follow these guidelines:
+
+* make a new and clean interface to SDL that stays as close as possible
+  to SDL terminology, but no closer.
+* implement mighty functionality that's easy to use
+  (some of this functionality duplicates what is available as
+  SDL_mixer,SDL_image,SDL_ttf etc)
+* use naming conventions that loosely resemble those of the STL, so 
+  SDLucid doesn't introduce another naming scheme into a client 
+  program
+* stick to one mighty image format: PNG
+* use exceptions for error reporting
+
+The SDLucid homepage is at http://sdlucid.sourceforge.net.
+
+Andreas Kloeckner <ak@ixion.net>
+Hardy Kahl <hk@ixion.net>
+
+-------------------------------------------------------------------------------
+2. What do I need to build SDLucid?
+-------------------------------------------------------------------------------
+
+SDLucid has the following requirements:
+
+* SDL (http://www.libsdl.org)
+* ixlib (http://ixlib.sourceforge.net)
+
+ixlib is used for the exception framework, fast graphics primitive
+rasterization, memory management and geometry representation (polygons,
+rectangles).
+
+The following libraries are optional: (and on by default)
+
+* libpng (--without-libpng) 
+* libmikmod (--without-mikmod)
+* smpeg (http://www.lokigames.com) (--without-smpeg)
+* freetype 1 (http://www.freetype.org) (--without-freetype)
+
+-------------------------------------------------------------------------------
+3. How do I build SDLucid?
+-------------------------------------------------------------------------------
+
+configure --prefix=/where/you/want [--enable-debug] [--disable-static]
+  [--with-freetype=/where] [--with-libmikmod=/where]
+  [--with-libpng=/where]
+make
+make install
+
+should do the trick.
+
+-------------------------------------------------------------------------------
+4. How do I compile my own program with SDLucid?
+-------------------------------------------------------------------------------
+
+SDLucid provides sdlucid.m4, which provides an autoconf macro
+AM_PATH_SDLUCID(MIN_VERSION,ACTION-IF-FOUND,ACTION-IF-NOT-FOUND)
+that you can use in your program.
+
+Alternatively, just compile like this:
+
+  c++ -c my_program.cc `sdlucid-config --cflags`
+
+and link like this:
+
+  c++ my_program.o -o my_program `sdlucid-config --libs`
+
+-------------------------------------------------------------------------------
+5. How can I learn to use SDLucid?
+-------------------------------------------------------------------------------
+
+Look in the examples/ directory of the distribution.
+
+If you want a bigger example, try http://w-a-m.sourceforge.net.
+
+-------------------------------------------------------------------------------
+6. FAQ
+-------------------------------------------------------------------------------
+Q: Why arent the events,yuv,... subsystems also wrapped?
+A: For some, like events, it doesn't make sense because the interface is
+   simple enough. Others, like yuv buffers, just haven't grown my interest
+   just yet. If you want to wrap them, go ahead.
+
+Q: What must I do to make the mingw cross-gcc environment build correctly?
+A: Have all the mingw executables named with a prefix of "i386-mingw32msvc-",
+   use 
+   
+     HOST_CC="gcc" make
+   
+   to build.

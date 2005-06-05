@@ -1,0 +1,8 @@
+2001-12-12  Andreas Kloeckner  <ak@ixion.net>
+
+	* gave better memory management capability to audio_data_stream
+
+2001-07-06  Andreas Kloeckner  <ak@ixion.net>
+
+	* released version 0.90.0
+

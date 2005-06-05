@@ -1,0 +1,9 @@
+This is a small demo of SDLucid functionality (and how easily it can be
+used).
+
+The font file was generated using:
+
+  sdlucid_ripttf ttf=tahoma.ttf out=tahoma.fnt --alpha size=8
+
+I cannot redistribute tahoma.ttf out of copyright reasons, but looking 
+through your windows install should reveal you already have the file :)

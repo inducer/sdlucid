@@ -10,6 +10,7 @@ run() {
 
 run aclocal
 run autoheader
+libtoolize --force
 # yes no | run gettextize -f
 run autoconf
 run automake -a

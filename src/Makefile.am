@@ -45,7 +45,7 @@ smpeg_extra_files=sdlucid_smpeg_stream.hh smpeg_stream.cc
 
 
 # Targets ---------------------------------------------------------------------
-CXXFLAGS=@CXXFLAGS@ @SDL_CFLAGS@ @IXLIB_CFLAGS@ @LIBPNG_CFLAGS@ \
+AM_CXXFLAGS=@CXXFLAGS@ @SDL_CFLAGS@ @IXLIB_CFLAGS@ @LIBPNG_CFLAGS@ \
   @FREETYPE_CFLAGS@ @SMPEG_CFLAGS@ @LIBMIKMOD_CFLAGS@
 
 lib_LTLIBRARIES=libsdlucid.la

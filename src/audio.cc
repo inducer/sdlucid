@@ -718,7 +718,7 @@ void audio_data_stream::mixTo(TSampleValue *data,TSize samples,TSize frequency,T
   
   mix(data,(void *) Position,(void *) (Data->get()+Data->getByteSize()),
     samples,Format.Layout,Format.Channels,channels,LVolume,RVolume,
-    (float) Format.Frequency/frequency,&(void *) Position);
+    (float) Format.Frequency/frequency,(void **) &Position);
   
   if (RepeatCount && Position == Data->get()+Data->getByteSize()) {
     if (RepeatCount != SDLUCID_AUDIO_REPEAT_INF) RepeatCount--;

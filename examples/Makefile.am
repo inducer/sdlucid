@@ -5,7 +5,7 @@
 # -----------------------------------------------------------------------------
 
 # Targets ---------------------------------------------------------------------
-CXXFLAGS=@CXXFLAGS@ -I$(top_srcdir)/src @SDL_CFLAGS@ @IXLIB_CFLAGS@ @LIBPNG_CFLAGS@ \
+AM_CXXFLAGS=@CXXFLAGS@ -I$(top_srcdir)/src @SDL_CFLAGS@ @IXLIB_CFLAGS@ @LIBPNG_CFLAGS@ \
   @FREETYPE_CFLAGS@ @SMPEG_CFLAGS@ @LIBMIKMOD_CFLAGS@
 
 # Tools -----------------------------------------------------------------------

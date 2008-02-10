@@ -56,7 +56,7 @@ libsdlucid_la_SOURCES=$(base_headers) $(base_modules) \
   $(mikmod_headers) $(mikmod_modules)\
   $(smpeg_headers) $(smpeg_modules)
 libsdlucid_la_LDFLAGS=-version-info @BINARY_IFACE_VERSION@:@BINARY_REVISION@:@BINARY_AGE@ \
-  @LIBPNG_LDFLAGS@ @LIBMIKMOD_LDFLAGS@ @SMPEG_LDFLAGS@
+  @LIBPNG_LDFLAGS@ @LIBMIKMOD_LDFLAGS@
 libsdlucid_la_LIBADD=$(mikmod_libraries) $(smpeg_libraries) @LIBPNG_LIBS@ \
   @LIBMIKMOD_LIBS@ @SMPEG_LIBS@ @IXLIB_LIBS@ 
 

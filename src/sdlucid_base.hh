@@ -53,11 +53,11 @@
 #ifdef __cplusplus
 namespace sdl {
   struct sdl_exception : public ixion::base_exception {
-    sdl_exception(ixion::TErrorCode error, char const *info = NULL, char *module = NULL,
+    sdl_exception(ixion::TErrorCode error, char const *info = NULL, const char *module = NULL,
       ixion::TIndex line = 0)
       : base_exception(error,info,module,line,"SDL") {
       }
-    virtual char *getText() const;
+    virtual const char *getText() const;
     };
   }
 #endif //__cplusplus

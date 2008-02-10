@@ -44,11 +44,11 @@ namespace png {
   
   
   struct png_exception : public ixion::base_exception {
-    png_exception(ixion::TErrorCode error, char const *info = NULL, char *module = NULL,
+    png_exception(ixion::TErrorCode error, char const *info = NULL, char const *module = NULL,
       ixion::TIndex line = 0)
       : base_exception(error,info,module,line,"PNG") {
       }
-    virtual char *getText() const;
+    virtual char const *getText() const;
   };
   
   

@@ -8,7 +8,7 @@ run() {
   "$@"
   }
 
-run aclocal
+run aclocal -I $HOME/pool/share/aclocal
 run autoheader
 libtoolize --force
 # yes no | run gettextize -f

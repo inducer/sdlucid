@@ -29,14 +29,14 @@ using namespace png;
 
 
 
-static char *(PNGPlainText[]) =
+static char const *(PNGPlainText[]) =
   { TPNG_GENERAL,TPNG_INVALIDINFO };
 
 
 
 
 // png_exception --------------------------------------------------------------
-char *png_exception::getText() const {
+char const *png_exception::getText() const {
   return PNGPlainText[Error];
   }
 

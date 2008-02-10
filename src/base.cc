@@ -35,7 +35,7 @@ using namespace sdl;
 
 
 
-static char *SDLPlainText[] = { 
+static char const *SDLPlainText[] = { 
   TSDL_GENERAL,TSDL_NODEVICE,TSDL_RESOURCEINUSE,TSDL_CANNOTCONVERT,
   TSDL_FILEFORMAT,TSDL_NOTFOUND,TSDL_SOUNDFORMAT,TSDL_NOFRAMEBUFFER,
   TSDL_IOERROR
@@ -45,7 +45,7 @@ static char *SDLPlainText[] = {
 
 
 // sdl_exception --------------------------------------------------------------
-char *sdl_exception::getText() const {
+char const *sdl_exception::getText() const {
   return SDLPlainText[Error];
   }
 
